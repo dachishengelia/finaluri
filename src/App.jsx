@@ -29,12 +29,14 @@ function App() {
       setError({});
     } catch (e) {
       setData([]);
-      setError(
-        e.response?.data || {
-          title: "No Definitions Found",
-          message: "Sorry pal, we couldn't find definitions for the word you were looking for. You can try the search again at a later time or head to the web instead.",
-        }
-      );
+      if (e.response) {
+        
+        setError({
+          title: e.response.data.title || "No Definitions Found",
+          message: e.response.data.message || "Sorry pal, we couldn't find definitions for the word you were looking for.",
+        });
+      } else {
+      }
     }
   };
 
@@ -74,7 +76,7 @@ function App() {
 
       {inputError && <p className="input-error">Whoops, can’t be empty…</p>}
 
-      {data.length > 0 && (
+      {data.length > 0 ? (
         <motion.div
           className="result-box"
           initial={{ opacity: 0 }}
@@ -105,14 +107,14 @@ function App() {
             </div>
           ))}
         </motion.div>
-      )}
-
-      {error.title && (
-        <div className="error-message">
-          <p className="error-emoji">😕</p>
-          <h2 className="error-title">{error.title}</h2>
-          <p className="error-description">{error.message}</p>
-        </div>
+      ) : (
+        error.title && (
+          <div className="error-message">
+            <p className="error-emoji">😕</p>
+            <h2 className="error-title">{error.title}</h2>
+            <p className="error-description">{error.message}</p>
+          </div>
+        )
       )}
     </motion.div>
   );
