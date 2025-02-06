@@ -1,0 +1,190 @@
+.dark {
+  --bg-color: #050505;
+  --text-color: white;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-family: 'Sans Serif', sans-serif;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.phonetics {
+  color: #A445ED !important;
+}
+
+.meaning-box h4 {
+  color: #888;
+}
+
+.container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.search-box {
+  display: flex;
+  background-color: #F4F4F4;
+  padding: 10px;
+  border-radius: 8px;
+}
+
+.dark .search-box {
+  background-color: #1F1F1F;
+}
+
+.dark .search-box input {
+  background-color: #1F1F1F;
+  color: white;
+}
+
+.search-box input {
+  flex: 1;
+  border: none;
+  background: transparent;
+  font-size: 16px;
+  padding: 5px;
+}
+
+.search-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+.result-box {
+  margin-top: 20px;
+}
+
+.word-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.word {
+  font-size: 32px;
+  font-weight: bold;
+}
+
+.play-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+.phonetics {
+  color: var(--accent-color);
+}
+
+.meaning-box {
+  margin-top: 10px;
+  padding: 10px;
+  border-left: 3px solid var(--accent-color);
+}
+
+.input-error {
+  color: red;
+  font-size: 14px;
+  margin-top: 5px;
+}
+
+.error-message {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  width: 100%;
+  gap: 10px;
+}
+
+.error-emoji {
+  font-size: 80px;
+  line-height: 1;
+  margin-bottom: -10px;
+}
+
+.error-message {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.error-title {
+  color: black;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.error-description {
+  color: #888;
+  font-size: 16px;
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 15px;
+  }
+
+  .search-box {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .search-box input {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .error-message {
+    margin-top: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 10px;
+  }
+
+  .error-message {
+    font-size: 14px;
+  }
+
+  .error-title {
+    font-size: 18px;
+  }
+
+  .error-description {
+    font-size: 14px;
+  }
+}
+
+.dark .error-title {
+  color: white;
+}
+
+.meaning-box h3 {
+  display: flex;
+  align-items: center;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.grey-line {
+  flex-grow: 1;
+  height: 2px;
+  background-color: grey;
+  margin-left: 8px;
+  margin-top: 5px;
+}
+
